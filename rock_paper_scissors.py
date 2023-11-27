@@ -9,16 +9,20 @@
 
 import random
 
-user = input("What's your choice? 'r' for Rock, 'p' for Paper, and 's' for Scissors\n")
-pc = random.choice(['r', 'p', 's'])
+# Start the game
+# Ask the player to make a move (r, p, s)
+user_choice = input("What's your choice? 'r' for Rock, 'p' for Paper, and 's' for Scissors\n")
 
-print("User played: " + user)
-print("PC played: " + pc)
+# PC selects a move randomly
+pc_choice = random.choice(['r', 'p', 's'])
 
-if user == pc:
+print("User played: " + user_choice)
+print("PC played: " + pc_choice)
+
+# Determine the winner
+if user_choice == pc_choice:
     print("It's a tie!")
-elif (user == 'p' and pc == 'r') or (user == 'r' and pc == 's') or (user == 's' and pc == 'p'):
+elif (user_choice == 'p' and pc_choice == 'r') or (user_choice == 'r' and pc_choice == 's') or (user_choice == 's' and pc_choice == 'p'):
     print("You won!")
 else:
-    print("You lose!")
-
+    print("PC won. You lose!")
